@@ -1,6 +1,6 @@
 package com.riquetti.ProjetoLocadora.controller;
 
-import com.riquetti.ProjetoLocadora.entity.FabricanteEntity;
+import com.riquetti.ProjetoLocadora.dto.FabricanteDTO;
 import com.riquetti.ProjetoLocadora.service.FabricanteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,23 +10,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-
 @RestController
-@RequestMapping(value = "/api/v1/fabricantes")
+@RequestMapping("/api/v1/fabricantes")
 public class FabricanteController {
 
     @Autowired
     private FabricanteService fabricanteService;
 
     @GetMapping
-    public ResponseEntity<List<FabricanteEntity>> getAllFabricantes() {
-        List<FabricanteEntity> fabricantes = fabricanteService.findAll();
+    public ResponseEntity<List<FabricanteDTO>> getAllFabricantes() {
+        List<FabricanteDTO> fabricantes = fabricanteService.findAll();
         return ResponseEntity.ok(fabricantes);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Object> getFabricanteById(@PathVariable Long id) {
-        Optional<FabricanteEntity> fabricante = fabricanteService.findById(id);
+        Optional<FabricanteDTO> fabricante = fabricanteService.findById(id);
         if (fabricante.isPresent()) {
             return ResponseEntity.ok(fabricante.get());
         } else {
@@ -35,17 +34,17 @@ public class FabricanteController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createFabricante(@RequestBody FabricanteEntity fabricante) {
-        Long id = fabricanteService.save(fabricante);
+    public ResponseEntity<String> createFabricante(@RequestBody FabricanteDTO fabricanteDTO) {
+        Long id = fabricanteService.save(fabricanteDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body("Fabricante cadastrado com sucesso. ID: " + id);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateFabricante(@PathVariable Long id, @RequestBody FabricanteEntity updatedFabricante) {
-        if (id.equals(updatedFabricante.getId())) {
-            Optional<FabricanteEntity> existingFabricante = fabricanteService.findById(id);
+    public ResponseEntity<String> updateFabricante(@PathVariable Long id, @RequestBody FabricanteDTO updatedFabricanteDTO) {
+        if (id.equals(updatedFabricanteDTO.id())) {
+            Optional<FabricanteDTO> existingFabricante = fabricanteService.findById(id);
             if (existingFabricante.isPresent()) {
-                fabricanteService.update(updatedFabricante);
+                fabricanteService.update(updatedFabricanteDTO);
                 return ResponseEntity.ok("Fabricante atualizado com sucesso");
             } else {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Fabricante não encontrado");

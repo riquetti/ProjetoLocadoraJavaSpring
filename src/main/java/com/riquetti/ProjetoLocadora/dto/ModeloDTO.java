@@ -6,8 +6,10 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
 
-public record FabricanteDTO(
+public record ModeloDTO(
         Long id,
+        Long idFabricante,
+        String nomeFabricante,
         String nome
 ) {
 }
