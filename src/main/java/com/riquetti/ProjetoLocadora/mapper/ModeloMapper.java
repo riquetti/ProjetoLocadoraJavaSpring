@@ -7,6 +7,7 @@ import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
 public interface ModeloMapper {
+
     ModeloMapper INSTANCE = Mappers.getMapper(ModeloMapper.class);
 
     ModeloDTO toDTO(ModeloEntity modeloEntity);
