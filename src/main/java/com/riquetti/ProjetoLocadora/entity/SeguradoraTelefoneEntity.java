@@ -15,5 +15,5 @@ public class SeguradoraTelefoneEntity {
     private Long idSeguradoraTelefone;
     private Long idSeguradora;
     private String telefoneSeguradora;
-    private String cnpj;
+    private String nomeSeguradora;
 }

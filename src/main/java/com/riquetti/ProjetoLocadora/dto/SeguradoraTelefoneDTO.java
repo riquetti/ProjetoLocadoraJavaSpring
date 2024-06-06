@@ -5,7 +5,7 @@ public record SeguradoraTelefoneDTO(
         Long idSeguradoraTelefone,
         Long idSeguradora,
         String telefoneSeguradora,
-        String cnpj
+        String nomeSeguradora
 
 ) {
 }
