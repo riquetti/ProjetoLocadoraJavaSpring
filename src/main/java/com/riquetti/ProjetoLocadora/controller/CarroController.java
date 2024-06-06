@@ -54,7 +54,7 @@ public class CarroController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteModelo(@PathVariable Long id) {
+    public ResponseEntity<String> deleteCarro(@PathVariable Long id) {
         if (carroService.findById(id).isPresent()) {
             carroService.deleteById(id);
             return ResponseEntity.ok("Carro excluído com sucesso");
