@@ -1,8 +1,6 @@
 package com.riquetti.ProjetoLocadora.controller;
 
-import com.riquetti.ProjetoLocadora.dto.ClienteTelefoneDTO;
 import com.riquetti.ProjetoLocadora.dto.SeguradoraTelefoneDTO;
-import com.riquetti.ProjetoLocadora.service.ClienteTelefoneService;
 import com.riquetti.ProjetoLocadora.service.SeguradoraTelefoneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
