@@ -1,11 +1,8 @@
 package com.riquetti.ProjetoLocadora.service;
 
 import com.riquetti.ProjetoLocadora.dto.FabricanteDTO;
-import com.riquetti.ProjetoLocadora.dto.ModeloDTO;
 import com.riquetti.ProjetoLocadora.entity.FabricanteEntity;
-import com.riquetti.ProjetoLocadora.entity.ModeloEntity;
 import com.riquetti.ProjetoLocadora.mapper.FabricanteMapper;
-import com.riquetti.ProjetoLocadora.mapper.ModeloMapper;
 import com.riquetti.ProjetoLocadora.repository.FabricanteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

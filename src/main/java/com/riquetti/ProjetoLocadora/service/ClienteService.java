@@ -1,10 +1,7 @@
 package com.riquetti.ProjetoLocadora.service;
 
-import com.riquetti.ProjetoLocadora.dto.CarroDTO;
 import com.riquetti.ProjetoLocadora.dto.ClienteDTO;
-import com.riquetti.ProjetoLocadora.entity.CarroEntity;
 import com.riquetti.ProjetoLocadora.entity.ClienteEntity;
-import com.riquetti.ProjetoLocadora.mapper.CarroMapper;
 import com.riquetti.ProjetoLocadora.mapper.ClienteMapper;
 import com.riquetti.ProjetoLocadora.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
