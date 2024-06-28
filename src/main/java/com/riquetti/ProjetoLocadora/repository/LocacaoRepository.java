@@ -1,6 +1,5 @@
 package com.riquetti.ProjetoLocadora.repository;
 
-import com.riquetti.ProjetoLocadora.entity.FabricanteEntity;
 import com.riquetti.ProjetoLocadora.entity.LocacaoEntity;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -10,8 +9,8 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 import java.util.List;
+
 
 @Repository
 public class LocacaoRepository {

@@ -14,6 +14,10 @@ public class LocacaoService {
     @Autowired
     private LocacaoRepository locacaoRepository;
 
+    public LocacaoService(LocacaoRepository locacaoRepository) {
+        this.locacaoRepository = locacaoRepository;
+    }
+
     public List<LocacaoEntity> findAll() {
         return locacaoRepository.findAll();
     }
@@ -33,4 +37,5 @@ public class LocacaoService {
     public void deleteById(Long id) {
         locacaoRepository.deleteById(id);
     }
+
 }
